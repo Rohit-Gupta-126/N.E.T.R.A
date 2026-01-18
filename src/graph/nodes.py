@@ -2,7 +2,7 @@
 import os
 import sys
 import json
-import google.generativeai as genai
+from google import genai
 from datetime import datetime
 
 # Import the Memory Structure (This was missing!)

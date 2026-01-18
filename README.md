@@ -3,7 +3,7 @@
 > **A Unified, AI-Powered Earth Observation Agent for Satellite Data Retrieval.**
 
 ![Project Status](https://img.shields.io/badge/Status-Prototype-blue)
-![Python](https://img.shields.io/badge/Python-3.10%2B-yellow)
+![Python](https://img.shields.io/badge/Python-3.12%2B-yellow)
 ![AI](https://img.shields.io/badge/AI-Google%20Gemini-orange)
 ![Framework](https://img.shields.io/badge/Framework-LangGraph-red)
 
@@ -44,8 +44,8 @@ N.E.T.R.A. operates on a "Hub and Spoke" AI architecture:
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/netra.git](https://github.com/your-username/netra.git)
-cd netra
+git clone [https://github.com/your-username/N.E.T.R.A.git](https://github.com/your-username/N.E.T.R.A.git)
+cd N.E.T.R.A
 
 ```
 
@@ -67,7 +67,7 @@ pip install -r requirements.txt
 
 ```
 
-*(Note: If you don't have a requirements file yet, install manually: `pip install langchain langgraph streamlit eodag google-generativeai folium streamlit-folium`)*
+*(Note: If you don't have a requirements file yet, install manually: `pip install langchain langgraph streamlit eodag google-genai folium streamlit-folium`)*
 
 ### 4. Configure Credentials
 
@@ -78,6 +78,9 @@ You can input credentials directly in the Web UI, or set them as environment var
 $env:GEMINI_API_KEY="AIza..."
 $env:EODAG__COPERNICUS_DATASPACE__AUTH__CREDENTIALS__USERNAME="user@email.com"
 $env:EODAG__COPERNICUS_DATASPACE__AUTH__CREDENTIALS__PASSWORD="password"
+
+$env:BHOONIDHI_USERID="user id"
+$env:BHOONIDHI_PASSWORD="password"
 
 ```
 
