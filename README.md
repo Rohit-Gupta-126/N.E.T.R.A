@@ -3,7 +3,7 @@
 > **A Unified, AI-Powered Earth Observation Agent for Satellite Data Retrieval.**
 
 ![Project Status](https://img.shields.io/badge/Status-Prototype-blue)
-![Python](https://img.shields.io/badge/Python-3.12%2B-yellow)
+![Python](https://img.shields.io/badge/Python-3.12%2B-green)
 ![AI](https://img.shields.io/badge/AI-Google%20Gemini-orange)
 ![Framework](https://img.shields.io/badge/Framework-LangGraph-red)
 
