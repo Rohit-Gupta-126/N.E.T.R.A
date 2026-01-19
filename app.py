@@ -18,6 +18,86 @@ if not os.path.exists(DOWNLOAD_DIR):
 # --- CONFIGURATION ---
 st.set_page_config(page_title="N.E.T.R.A.", page_icon="🛰️", layout="wide")
 
+# --- CUSTOM CUSTOMIZATION ---
+st.markdown("""
+<style>
+    /* Global Styles */
+    .stApp {
+        background-color: #0E1117;
+        color: #E6EDF3;
+    }
+    
+    /* Typography */
+    h1, h2, h3 {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+    
+    /* Custom Title Style */
+    .netra-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(120deg, #4EA8DE, #56CFE1, #64DFDF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        line-height: 1.2;
+    }
+    
+    .netra-subtitle {
+        font-size: 1.2rem;
+        color: #8B949E;
+        margin-top: 5px;
+        margin-bottom: 30px;
+        font-weight: 300;
+    }
+
+    /* Sidebar Styling */
+    section[data-testid="stSidebar"] {
+        background-color: #161B22;
+        border-right: 1px solid #30363D;
+    }
+    
+    /* Result Cards/Expanders */
+    div[data-testid="stExpander"] {
+        background-color: #161B22;
+        border: 1px solid #30363D;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    
+    div[data-testid="stExpander"] summary:hover {
+        color: #4EA8DE;
+    }
+
+    /* Button Styling */
+    div.stButton > button {
+        background: linear-gradient(to right, #1f6feb, #238636);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-weight: 600;
+        width: 100%;
+        transition: all 0.2s ease;
+    }
+    
+    div.stButton > button:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(31, 111, 235, 0.3);
+    }
+
+    /* Status Box */
+    div[data-testid="stStatusWidget"] {
+        background-color: #0d1117;
+        border: 1px solid #30363d;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 
 # --- FUNCTIONS ---
 def simulate_download(product_id, source):
@@ -42,7 +122,7 @@ def simulate_download(product_id, source):
 
 # --- SIDEBAR ---
 with st.sidebar:
-    st.header("🔐 Mission Control")
+    st.markdown('<h2 style="color: #4EA8DE;">🔐 Mission Control</h2>', unsafe_allow_html=True)
     gemini_key = st.text_input("Gemini API Key", type="password")
     if gemini_key:
         os.environ["GEMINI_API_KEY"] = gemini_key
@@ -72,8 +152,8 @@ with st.sidebar:
     st.info(f"📂 Downloads save to:\n{DOWNLOAD_DIR}")
 
 # --- MAIN INTERFACE ---
-st.title("🛰️ N.E.T.R.A.")
-st.caption("Neuro-symbolic Earth Technology for Retrieval & Analysis")
+st.markdown('<h1 class="netra-title">🛰️ N.E.T.R.A.</h1>', unsafe_allow_html=True)
+st.markdown('<p class="netra-subtitle">Neuro-symbolic Earth Technology for Retrieval & Analysis</p>', unsafe_allow_html=True)
 
 # Initialize Chat History & Results Memory
 if "messages" not in st.session_state:
@@ -136,7 +216,7 @@ if query:
 # This part runs every time, so buttons work even if you don't type a new query
 if st.session_state.last_results:
     st.divider()
-    st.subheader("📡 Search Results")
+    st.markdown('<h3 style="color: #4EA8DE; margin-bottom: 20px;">📡 Search Results</h3>', unsafe_allow_html=True)
 
     for img in st.session_state.last_results:
         with st.container():
